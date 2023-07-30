@@ -10,17 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500;6..12,800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/hamburguer.svg">
 </head>
 <body class="bg-[#FFE8CE] relative pb-[415px] min-[400px]:pb-[400px] sm:pb-[450px] md:pb-[530px] lg:pb-[700px] xl:pb-[890px]">
+    
+    <section id="menu" class="h-[100vh] w-[100%] top-0 hidden opacity-0 absolute bg-black text-white text-[40px] min-[500px]:text-[50px] min-[700px]:text-[65px] min-[1000px]:text-[80px] min-[2000px]:text-[100px] z-40 text-center transition duration-1000" style="font-family: 'Bagel Fat One', cursive;">
+        <svg id="cross" class="hover:fill-[#FEC51B] transition duration-500 absolute cursor-pointer m-5" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255); --darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-fill=""><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        <div class="h-[100vh] flex justify-center items-center px-5">
+            <ul>
+                <a href="#order"><li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer mb-3 max-[410px]:leading-tight">MAKE YOUR ORDER</li></a>
+                <a href="#about-us"><li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer mb-3">ABOUT US</li></a>
+                <li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer">ORDER</li>
+            </ul>
+        </div>
+    </section>
+
+
     <header class="flex justify-between px-8 py-6 max-[350px]:px-3">
-        <div class="flex font-semibold bg-black min-[700px]:bg-[#FEC51B] p-[10px] rounded-2xl w-[110px] h-[45px] shadow-md cursor-pointer">
+        <div id="menubtn" class="flex font-semibold bg-black min-[700px]:bg-[#FEC51B] p-[10px] rounded-2xl w-[110px] h-[45px] shadow-md cursor-pointer">
             <svg class="fill-black bg-[#FEC51B] min-[700px]:fill-[#FEC51B] min-[700px]:bg-black w-[25px] h-[25px] p-1 mr-1 rounded-lg" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
             <p class="mx-2 max-[700px]:text-[#FFE8CE]">Menu</p>
         </div>
 
-        <div class="flex font-semibold rounded-2xl z-50">
+        <div class="flex font-semibold rounded-2xl z-30">
             <!-- hamb -->
-            <a href="#"><svg class="fill-[#FFE8CE] bg-black w-[40px] h-[40px] p-2 ml-1 rounded-lg shadow-md" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-558v-40q0-109 105-175.5T480-840q190 0 295 66.5T880-598v40H80Zm62-60h676q-3-69-96.5-115.5T480-780q-148 0-242.5 46.5T142-618ZM80-382v-60q33 0 57.5-22t78.5-22q54 0 71.5 22t58.5 22q41 0 60.5-22t73.5-22q54 0 73.5 22t60.5 22q41 0 58.5-22t71.5-22q54 0 78.5 22t57.5 22v60q-54 0-74.5-22T744-426q-41 0-58.5 22T614-382q-54 0-73.5-22T480-426q-41 0-60.5 22T346-382q-54 0-71.5-22T216-426q-41 0-61.357 22T80-382Zm60 262q-24 0-42-18t-18-42v-128h800v128q0 24-18 42t-42 18H140Zm0-60h680v-68H140v68Zm0-68h680-680Zm2-370h676-676Z"/></svg></a>
+            <a href="#"><svg class="bg-black w-[40px] h-[40px] p-2 ml-1 rounded-lg shadow-md" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-558v-40q0-109 105-175.5T480-840q190 0 295 66.5T880-598v40H80Zm62-60h676q-3-69-96.5-115.5T480-780q-148 0-242.5 46.5T142-618ZM80-382v-60q33 0 57.5-22t78.5-22q54 0 71.5 22t58.5 22q41 0 60.5-22t73.5-22q54 0 73.5 22t60.5 22q41 0 58.5-22t71.5-22q54 0 78.5 22t57.5 22v60q-54 0-74.5-22T744-426q-41 0-58.5 22T614-382q-54 0-73.5-22T480-426q-41 0-60.5 22T346-382q-54 0-71.5-22T216-426q-41 0-61.357 22T80-382Zm60 262q-24 0-42-18t-18-42v-128h800v128q0 24-18 42t-42 18H140Zm0-60h680v-68H140v68Zm0-68h680-680Zm2-370h676-676Z"/></svg></a>
         
         </div>
 
@@ -31,41 +45,15 @@
     </header>
 
     <main class="flex justify-center">
-
-        <!-- HAMBURGUER EXAMPLES -->
-        <!-- <div class="grid grid-cols-1 gap-3 content-center">
-            <div class="w-[100px]">
-                <img class="bg-[#FEC51B] rounded-full py-[15px] shadow-md" src="imgs\hamb 1.png" alt="hamburguer example">
-            </div>
-
-            <div class="w-[100px]">
-                <img class="bg-[#FEC51B] rounded-full py-[15px] shadow-md" src="imgs\hamb 2.png" alt="hamburguer example">
-            </div>
-
-            <div class="w-[100px]">
-                <img class="bg-[#FEC51B] rounded-full p-[15px] shadow-md" src="imgs\hamb 3.png" alt="hamburguer example">
-            </div>
-        </div> -->
-
-        <!-- SPAN FOR OUR RECIPE -->
-        <!-- <span class="absolute bg-[#FEC51B] h-[2300px] min-[350px]:h-[2200px] min-[400px]:h-[2200px] min-[550px]:h-[2200px] sm:h-[2450px] md:h-[3100px] lg:h-[3400px] xl:h-[4200px] min-[1700px]:h-[2500px] w-[290px] min-[350px]:w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px] rounded-full shadow-lg z-10"></span> -->
-            
         <span class="absolute bg-[#FEC51B] h-[250px] min-[350px]:h-[250px] min-[400px]:h-[300px] min-[550px]:h-[300px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[700px] min-[1700px]:h-[700px] w-[290px] min-[350px]:w-[350px] md:w-[500px] lg:w-[620px] xl:w-[800px] rounded-t-full shadow-lg z-10"></span>
-
-        <!-- ARROW + FRIES -->
-        <!-- <img class="absolute left-[190px] bottom-[400px] h-[100px] rotate-[125deg] z-50" src="./imgs/arrow.png" alt="arrow"> 
-        
-        <img src="imgs\fries.png" alt="french fries" class="w-[700px] absolute left-[300px] bottom-[150px] z-10"> -->
-        
-        
     </main>
     
     <section class="flex justify-center">
-        <p class="text-[25px] min-[400px]:text-[30px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">UNLEASH YOUR CRAVINGS</p>
+        <p class="text-[23px] min-[400px]:text-[50px] sm:text-[45px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">UNLEASH YOUR CRAVINGS</p>
         <!-- <img src="imgs\fries.png" alt="french fries" class="sm:w-[300px] md:w-[500px] lg:w-[700px] xl:w-[900px] absolute right-[100px] top-[150px] z-10 saturate-[1.2]">
         <img src="imgs\fries.png" alt="french fries" class="sm:w-[300px] md:w-[500px] lg:w-[700px] xl:w-[900px] absolute left-[145px] top-[150px] z-10 saturate-[1.2]">  -->
         <img src="imgs\habmurguer.png" alt="hamburguer photo" class="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[900px] absolute top-[60px] lg:top-[20px] z-10 saturate-150"> 
-        <img class="w-screen absolute z-50 saturate-[1.2] top-[300px] min-[350px]:top-[320px] min-[380px]:top-[330px] md:top-[400px] lg:top-[500px] xl:top-[670px] min-[2300px]:top-[620px]" src="./imgs/bite now (1).png" alt="bite now">
+        <img class="w-screen absolute z-30 saturate-[1.2] top-[300px] min-[350px]:top-[320px] min-[380px]:top-[330px] md:top-[400px] lg:top-[500px] xl:top-[670px] min-[2300px]:top-[620px]" src="./imgs/bite now (1).png" alt="bite now">
     </section>
 
     <!-- OUR RECIPE -->
@@ -140,8 +128,8 @@
         </div>
     </section> -->
 
-    <section id="order" class="mt-[275px] min-[500px]:mt-[300px] min-[600px]:mt-[300px] sm:mt-[330px] md:mt-[400px] lg:mt-[500px] xl:mt-[700px] min-[1700px]:mt-[750px] min-[2000px]:mt-[800px]">
-        <p class="text-center text-[25px] min-[400px]:text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">MAKE YOUR ORDER</p>
+    <section id="order" class="mt-[325px] min-[500px]:mt-[300px] min-[600px]:mt-[350px] sm:mt-[330px] md:mt-[400px] lg:mt-[500px] xl:mt-[700px] min-[1700px]:mt-[750px] min-[2000px]:mt-[800px]">
+        <p class="text-center text-[33px] min-[400px]:text-[45px] sm:text-[45px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">MAKE YOUR ORDER</p>
         
         <section class="flex justify-around flex-wrap flex-row gap-y-8 pt-5 2xl:px-[200px]">
             <div class="flex justify-center basis-[33%]" style="font-family: 'Nunito Sans', sans-serif;">
@@ -152,7 +140,7 @@
 
                     <div class="pl-5 pt-3 pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
                         <p class="text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Beef Classic</p>
-                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">A juicy beef patty layered with lettuce, onion, double cheese, and tomato for a timeless and delectable burger delight.</p>
+                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">The classic. A juicy beef patty layered with lettuce, onion, double cheese, and tomatoes for a true burger delight.</p>
                         <hr class="border-[#CFB688] mt-2">
                         
                         <div class="flex justify-between items-center pr-1 min-[2000px]:pr-2">
@@ -170,8 +158,8 @@
                     </div>
 
                     <div class="pl-5 pt-3 pr-5 xl:pr-6 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
-                        <p class="text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Deluxe Burger</p>
-                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">A duo of patties, pickles, tomato, lettuce, fried egg, and melted cheese, all included in one sensational burger.</p>
+                        <p class="max-md:-mr-5 text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Deluxe Burger</p>
+                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">A duo of patties, pickles, tomatoes, lettuce, fried egg, and melted cheese, all included in one sensational burger.</p>
                         <hr class="border-[#CFB688] mt-2">
                         
                         <div class="flex justify-between items-center pr-1 min-[2000px]:pr-2">
@@ -209,9 +197,9 @@
                         <img class="w-[100%] h-[100%] object-cover lg:h-auto lg:hover:scale-110 lg:transition lg:duration-500 lg:cursor-pointer lg:object-contain" src="imgs\hamburguesa 4.png" alt="hamburguer 1">
                     </div>
 
-                    <div class="pl-5 pt-3 pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
+                    <div class="pl-5 pt-3 pr-4 min-[450px]:pr-5 min-[650px]:pr-3 min-[850px]:pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
                         <p class="text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Garden Chick</p>
-                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">Savor our Garden Chick, with a tender chicken patty, tomatoes, cucumber, lettuce, and onion for a different experience.</p>
+                        <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">Savor our Garden Chick, a different option, with a tender chicken patty, tomatoes, cucumber, lettuce, and onion.</p>
                         <hr class="border-[#CFB688] mt-2">
                         
                         <div class="flex justify-between items-center pr-1 min-[2000px]:pr-2">
@@ -230,7 +218,7 @@
                     </div>
 
                     <div class="pl-5 pt-3 pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
-                        <p class="text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Veggie Burguer</p>
+                        <p class="max-md:-mr-5 text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Veggie Burguer</p>
                         <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">Our veggie burguer features our veggie patty accompained with fresh lettuce, cheese, tomatoes, zucchini, and onion.</p>
                         <hr class="border-[#CFB688] mt-2">
                         
@@ -249,7 +237,7 @@
                         <img class="w-[100%] h-[100%] object-cover lg:h-auto lg:hover:scale-110 lg:transition lg:duration-500 lg:cursor-pointer lg:object-contain" src="imgs\hamburguesa 6.png" alt="hamburguer 1">
                     </div>
 
-                    <div class="pl-5 pt-3 pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
+                    <div class="pl-5 pt-3 pr-3 min-[375]:pr-5 min-[550px]:pr-4 min-[650px]:pr-5 w-auto md:w-[55%] min-[850px]:w-[60%] lg:w-auto">
                         <p class="text-[16px] md:text-[20px] lg:text-[30px] min-[2000px]:text-[40px] font-[800]">Grand Fusion</p>
                         <p class="text-[11px] md:text-[13px] lg:text-[18px] min-[2000px]:text-[20px]">This option has patties with melted cheese and caramelized onions, tomatoes, lettuce, pickles, and fusion buns.</p>
                         <hr class="border-[#CFB688] mt-2">
@@ -266,9 +254,9 @@
     </section>
 
 
-    <section class="mt-[75px] pb-5">
+    <section id="about-us" class="mt-[75px] pb-5">
         <div>
-            <p class="text-center text-[25px] min-[400px]:text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">ABOUT US</p>
+            <p class="text-center text-[33px] min-[400px]:text-[45px] sm:text-[45px] md:text-[50px] lg:text-[70px] xl:text-[100px] z-20 text-[#301000]" style="font-family: 'Bagel Fat One', cursive;">ABOUT US</p>
             <div class="flex justify-center">
                 <div class="md:px-[25px] lg:px-[50px] 2xl:pl-[150px] xl:pr-[50px] min-[1700px]:pl-[200px] min-[2000px]:pl-[300px] min-[1700px]:pr-[100px] pt-[25px] w-[75%]">
                     <p class="md:text-[18px] lg:text-[20px] xl:text-[22px] min-[1700px]:text-[30px] min-[2300px]:text-[40px]" style="font-family: 'Nunito Sans', sans-serif;">Welcome to <span class="text-[#FEC51B] font-[700]">Beef</span>, where our passion for premium beef takes center stage. With a commitment to excellence, we source only the <b>highest quality beef</b>, ensuring each bite is tender and bursting with exceptional flavor. <br/>From classic favorites like the <span class="text-[#FEC51B] font-[700]">Beef Classic</span> with juicy patties and fresh veggies to innovative creations like the <span class="text-[#FEC51B] font-[700]">Double Fusion Burger</span>, harmonizing beef with <b>unique fusion buns</b>, our menu caters to all tastes. Beyond taste, we carefully select the freshest produce, cheeses, and condiments to complement our burgers perfectly. <br>Join us on this <b>savory journey</b>, and let our premium beef delights enchant your taste buds.</p>
@@ -289,15 +277,26 @@
         <img src="imgs\habmurguer.png" alt="hamburguer photo" class="mt-[200px] md:mt-[250px] xl:mt-[350px] 2xl:mt-[450px] w-[350px] md:w-[500px] lg:w-[700px] xl:w-[900px] absolute z-10 saturate-150"> 
     </section>
 
-    <footer class="flex justify-between px-8 py-6 max-[350px]:px-3 absolute w-[100%] bottom-0 z-50">
-        <div class="flex font-semibold bg-black min-[700px]:bg-[#FEC51B] p-[10px] rounded-2xl w-[110px] h-[45px] shadow-md cursor-pointer">
+    <section id="menu2" class="h-[100vh] w-[100%] bottom-0 hidden opacity-0 absolute bg-black text-white text-[40px] min-[500px]:text-[50px] min-[700px]:text-[65px] min-[1000px]:text-[80px] min-[2000px]:text-[100px] z-40 text-center transition duration-1000" style="font-family: 'Bagel Fat One', cursive;">
+        <svg id="cross2" class="hover:fill-[#FEC51B] transition duration-500 absolute cursor-pointer m-5" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255); --darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-fill=""><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        <div class="h-[100vh] flex justify-center items-center px-5">
+            <ul id="ul2">
+                <a href="#order"><li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer mb-3 max-[410px]:leading-tight">MAKE YOUR ORDER</li></a>
+                <a href="#about-us"><li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer mb-3">ABOUT US</li></a>
+                <li class="hover:text-[#FEC51B] transition duration-500 cursor-pointer">ORDER</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="flex justify-between px-8 py-6 max-[350px]:px-3 absolute w-[100%] bottom-0 z-30">
+        <div id="menubtn2" class="flex font-semibold bg-black min-[700px]:bg-[#FEC51B] p-[10px] rounded-2xl w-[110px] h-[45px] shadow-md cursor-pointer">
             <svg class="fill-black bg-[#FEC51B] min-[700px]:fill-[#FEC51B] min-[700px]:bg-black w-[25px] h-[25px] p-1 mr-1 rounded-lg" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
             <p class="mx-2 max-[700px]:text-[#FFE8CE]">Menu</p>
         </div>
 
-        <div class="flex font-semibold rounded-2xl z-50">
+        <div class="flex font-semibold rounded-2xl z-30">
             <!-- hamb -->
-            <a href="#"><svg class="fill-[#FFE8CE] bg-black w-[40px] h-[40px] p-2 ml-1 rounded-lg shadow-md" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-558v-40q0-109 105-175.5T480-840q190 0 295 66.5T880-598v40H80Zm62-60h676q-3-69-96.5-115.5T480-780q-148 0-242.5 46.5T142-618ZM80-382v-60q33 0 57.5-22t78.5-22q54 0 71.5 22t58.5 22q41 0 60.5-22t73.5-22q54 0 73.5 22t60.5 22q41 0 58.5-22t71.5-22q54 0 78.5 22t57.5 22v60q-54 0-74.5-22T744-426q-41 0-58.5 22T614-382q-54 0-73.5-22T480-426q-41 0-60.5 22T346-382q-54 0-71.5-22T216-426q-41 0-61.357 22T80-382Zm60 262q-24 0-42-18t-18-42v-128h800v128q0 24-18 42t-42 18H140Zm0-60h680v-68H140v68Zm0-68h680-680Zm2-370h676-676Z"/></svg></a>
+            <a href="#"><svg class="bg-black w-[40px] h-[40px] p-2 ml-1 rounded-lg shadow-md" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M80-558v-40q0-109 105-175.5T480-840q190 0 295 66.5T880-598v40H80Zm62-60h676q-3-69-96.5-115.5T480-780q-148 0-242.5 46.5T142-618ZM80-382v-60q33 0 57.5-22t78.5-22q54 0 71.5 22t58.5 22q41 0 60.5-22t73.5-22q54 0 73.5 22t60.5 22q41 0 58.5-22t71.5-22q54 0 78.5 22t57.5 22v60q-54 0-74.5-22T744-426q-41 0-58.5 22T614-382q-54 0-73.5-22T480-426q-41 0-60.5 22T346-382q-54 0-71.5-22T216-426q-41 0-61.357 22T80-382Zm60 262q-24 0-42-18t-18-42v-128h800v128q0 24-18 42t-42 18H140Zm0-60h680v-68H140v68Zm0-68h680-680Zm2-370h676-676Z"/></svg></a>
         
         </div>
 
@@ -306,5 +305,8 @@
             <svg class="fill-black bg-[#FEC51B] min-[700px]:fill-[#FEC51B] min-[700px]:bg-black w-[25px] h-[25px] p-1 ml-1 rounded-lg" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fec51b}</style><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
         </div>
     </footer>
+    
+    <script src="menu.js"></script>
+    <script src="order.js"></script>
 </body>
 </html>
