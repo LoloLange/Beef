@@ -1,0 +1,137 @@
+const addbtn = document.querySelectorAll('.add-to-order')
+
+
+addbtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        
+        var product = {
+            id: btn.getAttribute("id"),
+        }
+        
+        switch (product.id) {
+            case '1':
+              product.name = 'Beef Classic';
+              product.price = '5.99';
+              break;
+            case '2':
+                product.name = 'Deluxe Burger';
+                product.price = '7.99';
+              break;
+            case '3':
+                product.name = 'Double Fusion';
+                product.price = '7.50';
+              break;
+            case '4':
+                product.name = 'Garden Chick';
+                product.price = '6.50';
+              break;
+            case '5':
+                product.name = 'Veggie Burguer';
+                product.price = '7.50';
+              break;
+            case '6':
+                product.name = 'Grand Fusion';
+                product.price = '8.99';
+              break;
+            default:
+              console.error();
+          }
+
+            const existingOrder = localStorage.getItem('order');
+            let orderItems_ = existingOrder ? JSON.parse(existingOrder) : [];
+
+            
+
+            // Add the new product to the cart array
+            if(orderItems_.length <= 6) {
+              orderItems_.push(product);
+            }
+
+            // Convert the array to a JSON string and store it in localStorage
+            localStorage.setItem('order', JSON.stringify(orderItems_));
+        
+    })
+})
+
+const orderItems = document.getElementById("order-items");
+const price = document.getElementById("price");
+const div = document.createElement('div');
+const pay = document.getElementById("pay");
+const shippingP = document.createElement('p');
+const priceP = document.createElement('p');
+
+const existingOrder = localStorage.getItem('order');
+let items = existingOrder ? JSON.parse(existingOrder) : [];
+
+for (let i = 0; i < items.length; i++) {
+  const div = document.createElement('div');
+  const div2 = document.createElement('div');
+  const p = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+
+  orderItems.appendChild(div);
+  div.classList.add('flex') + div.classList.add('justify-between')
+  div.appendChild(p);
+  p.innerHTML = items[i].name;
+  p.classList.add('mt-1');
+
+  div.append(div2);
+  div2.append(p2);
+  div2.classList.add('flex')
+  p2.innerHTML = "$" + items[i].price;
+  p.classList.add('mt-1');
+
+  price.innerHTML = parseFloat(price.innerHTML);
+  price.innerHTML = (parseFloat(price.innerHTML) + parseFloat(items[i].price)).toFixed(2);
+
+  pay.innerHTML = "Pay " + "$" + price.innerHTML;
+
+  //delete btn
+  div2.append(p3)
+  p3.innerHTML = "X"
+  p3.classList.add('px-2') + p3.classList.add('ml-2') + p3.classList.add('mb-[12px]')
+  p3.classList.add('font-bold') + p3.classList.add('text-white') + p3.classList.add('bg-red-500') + p3.classList.add('rounded-l-sm') + p3.classList.add('cursor-pointer')
+
+
+  p3.addEventListener('click', () => {
+    console.log(items[i]);
+    price.innerHTML = (parseFloat(price.innerHTML) - parseFloat(items[i].price)).toFixed(2);
+    orderItems.removeChild(div);
+    pay.innerHTML = "Pay " + "$" + price.innerHTML;
+    items.splice(i, 1)
+    localStorage.setItem('order', JSON.stringify(items));
+
+    if(items.length != 0) {
+      pay.classList.add('bg-[#5386e4]') + pay.classList.remove('bg-gray-500') + pay.classList.remove('opacity-50')
+      pay.removeAttribute("disabled", "")
+    } else {
+      pay.classList.remove('bg-[#5386e4]') + pay.classList.add('bg-gray-500') + pay.classList.add('opacity-50')
+      pay.setAttribute("disabled", "")
+    }
+  })
+
+  
+}
+pay.innerHTML = "Pay " + "$" + price.innerHTML;
+
+
+
+if(items.length != 0) {
+  pay.classList.add('bg-[#5386e4]') + pay.classList.remove('bg-gray-500') + pay.classList.remove('opacity-50')
+  pay.removeAttribute("disabled", "")
+} else {
+  pay.classList.remove('bg-[#5386e4]') + pay.classList.add('bg-gray-500') + pay.classList.add('opacity-50')
+  pay.setAttribute("disabled", "")
+}
+
+
+orderItems.append(div);
+div.classList.add('flex') + div.classList.add('justify-between')
+div.appendChild(shippingP)
+shippingP.innerHTML = "Shipping"
+shippingP.classList.add('font-bold') + shippingP.classList.add('mt-1')
+
+div.append(priceP);
+priceP.innerHTML = "$3.99";
+priceP.classList.add('font-bold')
