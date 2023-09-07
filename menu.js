@@ -39,3 +39,33 @@ ul2.addEventListener('click', () => {
     html.classList.remove('overflow-hidden')
     menu2.classList.add('hidden')
 })
+
+document.addEventListener('click', () => {
+    const scrolled = document.scrollingElement.scrollTop;
+
+    if(scrolled > 30) {
+        menu.classList.add("pt-[45px]")
+    }
+
+    if(scrolled < 30) {
+        menu.classList.remove("pt-[45px]")
+    }
+})
+
+document.addEventListener('scroll', () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
+
+    // console.log("scrolleable height " + scrollableHeight)
+    // console.log("window scroll " + window.scrollY)
+
+    if (window.scrollY <= scrollableHeight - 24) {
+        menu2.classList.remove("pt-[85px]")
+        menu2.classList.add("pt-[35px]")
+    }
+    
+    if (window.scrollY >= scrollableHeight - 24) {
+        menu2.classList.add("pt-[85px]")
+        menu2.classList.remove("pt-[35px]")
+    }
+})
+
