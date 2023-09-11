@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500;6..12,800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" type="image/x-icon" href="/imgs/hamburguer.svg">
     <style>::-webkit-scrollbar {width: 15px;} ::-webkit-scrollbar-track {background: #353535;} ::-webkit-scrollbar-thumb {background: #5f6162;} ::-webkit-scrollbar-thumb:hover {background: #636a6e;}</style>
 </head>
@@ -38,10 +40,9 @@
         </div>
 
         <a href="order.html">
-            <div class="flex font-semibold bg-black bg-[#FEC51B] p-[10px] rounded-2xl w-[130px] h-[45px] shadow-md cursor-pointer">
+            <div class="flex font-semibold bg-black bg-[#FEC51B] p-[10px] rounded-2xl w-[110px] h-[45px] shadow-md cursor-pointer">
                 <p class="mx-2 text-[#FFE8CE]">Order</p>
                 <svg class="fill-black bg-[#FEC51B] w-[25px] h-[25px] p-1 ml-1 rounded-lg" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fec51b}</style><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
-                <p id="orderAmount" class="mx-2 text-sm flex items-center text-[#FFE8CE] opacity-[.95]"></p>
             </div>
         </a>
     </header>
@@ -238,10 +239,5 @@
     <script src="menu.js"></script>
     <script src="order.js"></script>
     <script src="order-process.js"></script>
-
-    <script>
-        const orderAmount = document.getElementById("orderAmount");
-        orderAmount.innerHTML = items.length
-    </script>
 </body>
 </html>

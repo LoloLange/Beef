@@ -40,6 +40,5 @@ cards.forEach(item => {
         })
         item.classList.add('active')
         item.classList.add('border-sky-500')
-        console.log(ableToPay)
     });
 })

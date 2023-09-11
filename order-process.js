@@ -40,16 +40,25 @@ addbtn.forEach((btn) => {
             const existingOrder = localStorage.getItem('order');
             let orderItems_ = existingOrder ? JSON.parse(existingOrder) : [];
 
-            
-
             // Add the new product to the cart array
-            if(orderItems_.length <= 6) {
+            if(orderItems_.length < 6) {
               orderItems_.push(product);
+              Toastify({
+                text: product.name + " added to the order",
+                duration: 1500,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
             }
 
             // Convert the array to a JSON string and store it in localStorage
             localStorage.setItem('order', JSON.stringify(orderItems_));
-        
+            
     })
 })
 
@@ -70,20 +79,23 @@ for (let i = 0; i < items.length; i++) {
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
 
+  const existingOrder_ = localStorage.getItem('order');
+  let items_ = existingOrder_ ? JSON.parse(existingOrder_) : [];
+
   orderItems.appendChild(div);
   div.classList.add('flex') + div.classList.add('justify-between')
   div.appendChild(p);
-  p.innerHTML = items[i].name;
+  p.innerHTML = items_[i].name;
   p.classList.add('mt-1');
 
   div.append(div2);
   div2.append(p2);
   div2.classList.add('flex')
-  p2.innerHTML = "$" + items[i].price;
+  p2.innerHTML = "$" + items_[i].price;
   p.classList.add('mt-1');
 
   price.innerHTML = parseFloat(price.innerHTML);
-  price.innerHTML = (parseFloat(price.innerHTML) + parseFloat(items[i].price)).toFixed(2);
+  price.innerHTML = (parseFloat(price.innerHTML) + parseFloat(items_[i].price)).toFixed(2);
 
   pay.innerHTML = "Pay " + "$" + price.innerHTML;
 
@@ -95,12 +107,8 @@ for (let i = 0; i < items.length; i++) {
 
 
   p3.addEventListener('click', () => {
-    console.log(items[i]);
-    price.innerHTML = (parseFloat(price.innerHTML) - parseFloat(items[i].price)).toFixed(2);
-    orderItems.removeChild(div);
+    price.innerHTML = (parseFloat(price.innerHTML) - parseFloat(items_[i].price)).toFixed(2);
     pay.innerHTML = "Pay " + "$" + price.innerHTML;
-    items.splice(i, 1)
-    localStorage.setItem('order', JSON.stringify(items));
 
     if(items.length != 0) {
       pay.classList.add('bg-[#5386e4]') + pay.classList.remove('bg-gray-500') + pay.classList.remove('opacity-50')
@@ -109,8 +117,16 @@ for (let i = 0; i < items.length; i++) {
       pay.classList.remove('bg-[#5386e4]') + pay.classList.add('bg-gray-500') + pay.classList.add('opacity-50')
       pay.setAttribute("disabled", "")
     }
-  })
 
+    orderItems.removeChild(div);
+    items.splice(i, 1)
+    localStorage.setItem('order', JSON.stringify(items));
+
+    setTimeout(function(){
+      location.reload();
+  }, 100);
+    
+  })
   
 }
 pay.innerHTML = "Pay " + "$" + price.innerHTML;
