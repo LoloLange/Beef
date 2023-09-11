@@ -50,7 +50,7 @@ addbtn.forEach((btn) => {
                 position: "right", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
-                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  background: "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
                 },
                 onClick: function(){} // Callback after click
               }).showToast();
@@ -166,7 +166,7 @@ pay.addEventListener("click", () => {
       position: "right", // `left`, `center` or `right`
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
-        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
+        background: "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
       },
       onClick: function(){} // Callback after click
     })
