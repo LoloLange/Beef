@@ -86,14 +86,12 @@ for (let i = 0; i < items.length; i++) {
   div.classList.add('flex') + div.classList.add('justify-between')
   div.appendChild(p);
   p.innerHTML = items_[i].name;
-  p.classList.add('mt-1');
 
   div.append(div2);
   div2.append(p2);
   div2.classList.add('flex')
   p2.innerHTML = "$" + items_[i].price;
-  p.classList.add('mt-1');
-
+  
   price.innerHTML = parseFloat(price.innerHTML);
   price.innerHTML = (parseFloat(price.innerHTML) + parseFloat(items_[i].price)).toFixed(2);
 
@@ -102,7 +100,7 @@ for (let i = 0; i < items.length; i++) {
   //delete btn
   div2.append(p3)
   p3.innerHTML = "X"
-  p3.classList.add('px-2') + p3.classList.add('ml-2') + p3.classList.add('mb-[12px]')
+  p3.classList.add('px-2') + p3.classList.add('ml-2') + p3.classList.add('mb-[13px]')
   p3.classList.add('font-bold') + p3.classList.add('text-white') + p3.classList.add('bg-red-500') + p3.classList.add('rounded-l-sm') + p3.classList.add('cursor-pointer')
 
 
@@ -151,3 +149,27 @@ shippingP.classList.add('font-bold') + shippingP.classList.add('mt-1')
 div.append(priceP);
 priceP.innerHTML = "$3.99";
 priceP.classList.add('font-bold')
+
+
+pay.addEventListener("click", () => {
+  if(ableToPay) {
+    localStorage.removeItem("order");
+    sessionStorage.removeItem("payment_method_id");
+    alert("You have successfully made your order");
+    location.replace("index.html")
+  } else {
+    console.log("No payment method selected")
+    Toastify({
+      text: "No payment method selected",
+      duration: 2000,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))",
+      },
+      onClick: function(){} // Callback after click
+    })
+    .showToast();
+  }
+})

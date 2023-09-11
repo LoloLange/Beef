@@ -24,16 +24,12 @@ ul.addEventListener('click', () => {
 
 const cards = document.querySelectorAll('.card')
 
-let ableToPay = false;
+let ableToPay
 
 cards.forEach(item => {
-
-    if(item.classList.contains = 'active') {
-        ableToPay = true
-    } else {
-        ableToPay = false
-    }
     item.addEventListener('click', () => {
+        sessionStorage.setItem("payment_method_id", item.id);
+        ableToPay = true
         cards.forEach(item => {
             item.classList.remove('active')
             item.classList.remove('border-sky-500')
@@ -41,4 +37,25 @@ cards.forEach(item => {
         item.classList.add('active')
         item.classList.add('border-sky-500')
     });
+    
+    if(!ableToPay) {
+        let data = sessionStorage.getItem("payment_method_id");
+        if(item.id === data) {
+            ableToPay = true
+            item.classList.add('active')
+            item.classList.add('border-sky-500')
+        } else {
+            item.classList.remove('active')
+            item.classList.remove('border-sky-500')
+            ableToPay = false
+    
+            if(item.classList.contains === 'active') {
+                ableToPay = true
+            } else {
+                ableToPay = false
+            }
+        
+            
+        }
+    }
 })
